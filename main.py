@@ -14,9 +14,9 @@ def zad2():
     lst2 = [random.randint(1, 10) for i in range(10)]
     pair_counter = 0
     print(lst2)
-    for i in lst2:
+    for i in range(len(lst2)):
         for j in lst2[i::]:
-            if i == j:
+            if lst2[i] == lst2[j]:
                 pair_counter += 1
     print(pair_counter)
 
@@ -74,7 +74,7 @@ def zad5():
                    'values for 100 gramm': 1000},
               }
     user_choose = 0
-    time_choose = 0
+    time_choose = ''
     prod_choose = ''
     while user_choose != 6:
 
@@ -105,11 +105,11 @@ def zad5():
             number_of = input('Сколько?: ')
             if number_of == 'n':
                 break
-            if int(time_choose) == 1:
+            if time_choose == '1' or time_choose.lower().strip() == 'торт':
                 prod_choose = 'cake'
-            elif int(time_choose) == 2:
+            elif time_choose == '2' or time_choose.lower().strip() == 'пирожное':
                 prod_choose = 'cupcake'
-            elif int(time_choose) == 3:
+            elif time_choose == '3' or time_choose.lower().strip() == 'маффин':
                 prod_choose == 'muffin'
             elif time_choose == 'n' or number_of == 'n':
                 break
